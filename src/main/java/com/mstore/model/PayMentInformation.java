@@ -22,6 +22,11 @@ public class PayMentInformation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
+	
+	// For Card
+	@Column(name = "PAYMENT_TYPE")
+	private String paymentType;
+	
 	@Column(name = "CARDHOLDER_NAME")
 	private String cardHolderName;
 	
@@ -33,6 +38,10 @@ public class PayMentInformation {
 	
 	@Column(name = "CVV")
 	private String cvv;
+	
+	//for upi
+	@Column(name = "UPI")
+	private String upi;
 	
 	@ManyToOne()
 	@JoinColumn(name = "USER_ID")

@@ -31,5 +31,8 @@ public class Rating {
 	@JoinColumn(name = "PRODUCT_ID",nullable = false)
 	private Product product;
 	
+	@Column(name = "RATING")
+	private float rating;
+	
 
 }

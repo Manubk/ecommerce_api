@@ -1,6 +1,11 @@
 package com.mstore.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,12 +28,13 @@ public class Cart {
 	@Column(name = "ID")
 	private Long id;
 	
+	@JsonIgnore
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "USER_ID",nullable = false)
 	private User user;
 	
-	@OneToMany(mappedBy = "cart",cascade = CascadeType.ALL)
-	private Set<CartItem> cartItems;
+	@OneToMany(mappedBy = "cart",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<CartItem> cartItems = new ArrayList<CartItem>();
 	
 	@Column(name = "TOTAL_PRICE")
 	private double totalPrice;

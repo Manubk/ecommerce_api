@@ -33,4 +33,5 @@ public class Category {
 	 
 	@Column(name = "LEVEL")
 	private Integer level;
+	
 }

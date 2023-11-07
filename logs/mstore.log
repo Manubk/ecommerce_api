@@ -1,0 +1,177 @@
+2023-11-07T14:12:30.841+05:30  INFO 11056 --- [restartedMain] com.mstore.MStoreApplication             : Starting MStoreApplication using Java 17.0.7 with PID 11056 (D:\Projects\CsProjects\Ecommerse\ecommerce_api\target\classes started by malte in D:\Projects\CsProjects\Ecommerse\ecommerce_api)
+2023-11-07T14:12:30.849+05:30  INFO 11056 --- [restartedMain] com.mstore.MStoreApplication             : No active profile set, falling back to 1 default profile: "default"
+2023-11-07T14:12:30.912+05:30  INFO 11056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-07T14:12:30.912+05:30  INFO 11056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-07T14:12:32.373+05:30  INFO 11056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-07T14:12:32.482+05:30  INFO 11056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 7 JPA repository interfaces.
+2023-11-07T14:12:33.265+05:30  INFO 11056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-11-07T14:12:33.277+05:30  INFO 11056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-07T14:12:33.278+05:30  INFO 11056 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-11-07T14:12:33.360+05:30  INFO 11056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-07T14:12:33.361+05:30  INFO 11056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2448 ms
+2023-11-07T14:12:33.545+05:30  INFO 11056 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-07T14:12:33.639+05:30  INFO 11056 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-11-07T14:12:33.642+05:30  INFO 11056 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-07T14:12:33.854+05:30  INFO 11056 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-07T14:12:34.047+05:30  INFO 11056 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-07T14:12:34.071+05:30  INFO 11056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-07T14:12:34.455+05:30  INFO 11056 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b741174
+2023-11-07T14:12:34.457+05:30  INFO 11056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-07T14:12:34.980+05:30  INFO 11056 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-07T14:12:35.890+05:30  INFO 11056 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-07T14:12:36.253+05:30  INFO 11056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-07T14:12:36.657+05:30  INFO 11056 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-07T14:12:37.336+05:30  WARN 11056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-07T14:12:37.446+05:30  INFO 11056 --- [restartedMain] com.mstore.security.SecurityConfig       : Security Filter Chain
+2023-11-07T14:12:37.685+05:30  INFO 11056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@294ec18e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@753a4629, org.springframework.security.web.context.SecurityContextHolderFilter@2d2677f0, org.springframework.security.web.header.HeaderWriterFilter@2da653d3, org.springframework.security.web.authentication.logout.LogoutFilter@7be7f91b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@34fd0aa4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55aac67d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4415c39c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@346aaafd, org.springframework.security.web.access.ExceptionTranslationFilter@332edf21, org.springframework.security.web.access.intercept.AuthorizationFilter@31f875]
+2023-11-07T14:12:37.898+05:30  INFO 11056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-07T14:12:37.946+05:30  INFO 11056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-11-07T14:12:37.959+05:30  INFO 11056 --- [restartedMain] com.mstore.MStoreApplication             : Started MStoreApplication in 7.559 seconds (process running for 9.038)
+2023-11-07T14:12:51.410+05:30  INFO 11056 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-07T14:12:51.410+05:30  INFO 11056 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-07T14:12:51.411+05:30  INFO 11056 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-07T14:12:51.508+05:30  INFO 11056 --- [http-nio-9091-exec-1] c.m.service.CustomeUserDetailService     : Loading User By userName=manu2@gmail.com
+2023-11-07T14:12:51.806+05:30  INFO 11056 --- [http-nio-9091-exec-1] com.mstore.controller.CartController     : Removing the item from Cart
+2023-11-07T14:12:57.951+05:30  INFO 11056 --- [http-nio-9091-exec-1] com.mstore.serviceimpl.CartServiceImpl   : Removing the Item from cart itemId=1
+2023-11-07T14:15:14.872+05:30  INFO 11056 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-11-07T14:15:14.883+05:30  INFO 11056 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-07T14:15:14.884+05:30  INFO 11056 --- [Thread-5] o.apache.catalina.core.StandardWrapper   : Waiting for [1] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-11-07T14:15:15.891+05:30  INFO 11056 --- [Thread-5] o.apache.catalina.core.StandardWrapper   : Waiting for [1] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-11-07T14:15:16.898+05:30  INFO 11056 --- [Thread-5] o.apache.catalina.core.StandardWrapper   : Waiting for [1] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-11-07T14:15:16.999+05:30  INFO 11056 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-07T14:15:17.003+05:30  WARN 11056 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ com.mstore.serviceimpl.CartServiceImpl.removeCartItem(CartServiceImpl.java:114)
+ com.mstore.controller.CartController.removeItemFromCart(CartController.java:64)
+ java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+ app//org.springframework.security.web.FilterChainProxy$$Lambda$1596/0x0000000800b30d90.doFilter(Unknown Source)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+ app//org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+ app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:200)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+ app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+ app//org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+ app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+ app//org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+ app//org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+ app//org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+ app//org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)]
+2023-11-07T14:15:24.212+05:30  INFO 21788 --- [restartedMain] com.mstore.MStoreApplication             : Starting MStoreApplication using Java 17.0.7 with PID 21788 (D:\Projects\CsProjects\Ecommerse\ecommerce_api\target\classes started by malte in D:\Projects\CsProjects\Ecommerse\ecommerce_api)
+2023-11-07T14:15:24.215+05:30  INFO 21788 --- [restartedMain] com.mstore.MStoreApplication             : No active profile set, falling back to 1 default profile: "default"
+2023-11-07T14:15:24.269+05:30  INFO 21788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-07T14:15:24.269+05:30  INFO 21788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-07T14:15:24.890+05:30  INFO 21788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-07T14:15:24.976+05:30  INFO 21788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+2023-11-07T14:15:25.530+05:30  INFO 21788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2023-11-07T14:15:25.542+05:30  INFO 21788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-07T14:15:25.543+05:30  INFO 21788 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-11-07T14:15:25.606+05:30  INFO 21788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-07T14:15:25.607+05:30  INFO 21788 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1336 ms
+2023-11-07T14:15:25.760+05:30  INFO 21788 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-07T14:15:25.815+05:30  INFO 21788 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-11-07T14:15:25.817+05:30  INFO 21788 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-07T14:15:25.955+05:30  INFO 21788 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-07T14:15:26.086+05:30  INFO 21788 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-07T14:15:26.102+05:30  INFO 21788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-07T14:15:26.405+05:30  INFO 21788 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a38681e
+2023-11-07T14:15:26.407+05:30  INFO 21788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-07T14:15:26.794+05:30  INFO 21788 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-07T14:15:27.586+05:30  INFO 21788 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-07T14:15:27.889+05:30  INFO 21788 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-07T14:15:28.200+05:30  INFO 21788 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-07T14:15:28.772+05:30  WARN 21788 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-07T14:15:28.842+05:30  INFO 21788 --- [restartedMain] com.mstore.security.SecurityConfig       : Security Filter Chain
+2023-11-07T14:15:29.028+05:30  INFO 21788 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d72ce05, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3791ef14, org.springframework.security.web.context.SecurityContextHolderFilter@3bcb6dc4, org.springframework.security.web.header.HeaderWriterFilter@70d939c7, org.springframework.security.web.authentication.logout.LogoutFilter@1f0601aa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4415c39c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5771e1ba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a327e8f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c48d408, org.springframework.security.web.access.ExceptionTranslationFilter@57ed03c7, org.springframework.security.web.access.intercept.AuthorizationFilter@353f82b7]
+2023-11-07T14:15:29.217+05:30  INFO 21788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-07T14:15:29.264+05:30  INFO 21788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2023-11-07T14:15:29.273+05:30  INFO 21788 --- [restartedMain] com.mstore.MStoreApplication             : Started MStoreApplication in 5.476 seconds (process running for 6.329)
+2023-11-07T14:15:36.967+05:30  INFO 21788 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-07T14:15:36.968+05:30  INFO 21788 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-07T14:15:36.969+05:30  INFO 21788 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-07T14:15:37.056+05:30  INFO 21788 --- [http-nio-9091-exec-1] c.m.service.CustomeUserDetailService     : Loading User By userName=manu2@gmail.com
+2023-11-07T14:15:37.328+05:30  INFO 21788 --- [http-nio-9091-exec-1] com.mstore.controller.CartController     : Removing the item from Cart
+2023-11-07T14:15:40.217+05:30  INFO 21788 --- [http-nio-9091-exec-1] com.mstore.serviceimpl.CartServiceImpl   : Removing the Item from cart itemId=1
+2023-11-07T14:16:43.772+05:30  INFO 21788 --- [http-nio-9091-exec-3] c.m.service.CustomeUserDetailService     : Loading User By userName=manu2@gmail.com
+2023-11-07T14:16:43.858+05:30  INFO 21788 --- [http-nio-9091-exec-3] com.mstore.controller.CartController     : Removing the item from Cart
+2023-11-07T14:16:46.564+05:30  INFO 21788 --- [http-nio-9091-exec-3] com.mstore.serviceimpl.CartServiceImpl   : Removing the Item from cart itemId=1
+2023-11-07T14:21:58.937+05:30  INFO 21788 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 76 class path changes (0 additions, 0 deletions, 76 modifications)
+2023-11-07T14:21:58.962+05:30  INFO 21788 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-07T14:21:58.964+05:30  INFO 21788 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-07T14:21:58.974+05:30  INFO 21788 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-07T14:21:58.978+05:30  INFO 21788 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-07T14:21:58.990+05:30  INFO 21788 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

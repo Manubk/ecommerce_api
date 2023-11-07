@@ -1,5 +1,7 @@
 package com.mstore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ public class CartItem {
 	@Column(name = "ID")
 	private Long id;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "CART_ID")
 	private Cart cart;
@@ -39,8 +42,11 @@ public class CartItem {
 	private int discountPercentage;
 	
 	@Column(name = "DISCOUNTED_PRICE")
-	private Integer discountedPrice;
+	private Double discountedPrice;
 	
 	@Column(name = "USER_ID")
 	private Long userId;
+	
+	@Column(name = "SAVE_FOR_LATER")
+	private boolean saveForLater = false;
 }
