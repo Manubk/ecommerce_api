@@ -1,6 +1,5 @@
 package com.mstore.service;
 
-import java.security.Principal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import com.mstore.dto.UserDto;
 import com.mstore.exception.UserException;
 import com.mstore.exception.UserNotFoundException;
 import com.mstore.model.User;
-import com.mstore.response.AuthResponse;
 import com.mstore.response.GeneralResponse;
 
 @Service

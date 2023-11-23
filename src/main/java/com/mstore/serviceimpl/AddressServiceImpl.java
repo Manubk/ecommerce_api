@@ -1,6 +1,5 @@
 package com.mstore.serviceimpl;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,24 +8,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.mstore.constants.ApplicationConstants;
 import com.mstore.dto.AddressDto;
-import com.mstore.dto.UserDto;
-import com.mstore.exception.AddressException;
 import com.mstore.exception.AddressNotFoundException;
 import com.mstore.exception.UserException;
 import com.mstore.model.Address;
 import com.mstore.model.User;
 import com.mstore.repo.AddressRepo;
-import com.mstore.repo.UserRepo;
 import com.mstore.response.GeneralResponse;
-import com.mstore.security.CustomeUser;
 import com.mstore.service.AddressService;
-import com.mstore.service.UserService;
 import com.mstore.util.ApplicationUtils;
 
 @Service
@@ -34,9 +25,6 @@ public class AddressServiceImpl implements AddressService{
 
 	@Autowired
 	private AddressRepo addressRepo;
-	
-	@Autowired
-	private UserRepo userRepo;
 	
 	Logger log = LoggerFactory.getLogger(AddressServiceImpl.class);
 	
@@ -46,7 +34,7 @@ public class AddressServiceImpl implements AddressService{
 		log.info("Getting all address of the user id="+currentUser.getId());
 	
 		List<Address> addresses = addressRepo.findByUser(currentUser);
-		List<AddressDto> addresDtos = new ArrayList();
+		List<AddressDto> addresDtos = new ArrayList<AddressDto>();
 		
 		addresses.stream().forEach( address ->{
 		 AddressDto addressDto = new AddressDto();
@@ -112,21 +100,25 @@ public class AddressServiceImpl implements AddressService{
 	public GeneralResponse saveAddressOfUser(AddressDto addressDto) {
 		log.info("Adding Address to User id="+addressDto.getUserId());
 		
-		User currentUser = ApplicationUtils.getLogedInUser();
+		try{
 		
-		if(currentUser != null) {
+			User currentUser = ApplicationUtils.getLogedInUser();
+			if(currentUser != null) {
 			Address address = new Address();
 			BeanUtils.copyProperties(addressDto, address);
 		    address.setUser(currentUser);
-			Address savedAddress = addressRepo.save(address);
-			
-			return new GeneralResponse.GeneralResposeBuilder().setIsSuccess(true).setMessage("Address Added Successful ;)").build();
-			
+		    addressRepo.save(address);	
+
+			return new GeneralResponse.GeneralResposeBuilder().setIsSuccess(true).setMessage("Address Added Successful ;)").build();	
+			}
+		
+			throw new UserException("Wrong User ");
+
+		}catch(Exception e){
+			log.error("Error in saving the Address ");
+			return new GeneralResponse.GeneralResposeBuilder().setIsSuccess(false).setMessage("Unable to add Address ;(").build();	
 		}
-		
-		throw new UserException("Wrong User ");
-		
-		
+	
 	}
 
 }

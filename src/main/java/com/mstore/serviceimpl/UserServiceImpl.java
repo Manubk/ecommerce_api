@@ -1,6 +1,5 @@
 package com.mstore.serviceimpl;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,20 +8,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Service;
 
 import com.mstore.constants.ApplicationConstants;
-import com.mstore.constants.ExceptionConstants;
 import com.mstore.dto.LoginDto;
 import com.mstore.dto.SignUpDto;
 import com.mstore.dto.UserDto;
@@ -32,10 +26,7 @@ import com.mstore.exception.UserNotFoundException;
 import com.mstore.model.Cart;
 import com.mstore.model.User;
 import com.mstore.repo.UserRepo;
-//import com.mstore.repo.UserRepo;
-import com.mstore.response.AuthResponse;
 import com.mstore.response.GeneralResponse;
-import com.mstore.security.CustomeUser;
 import com.mstore.service.CartService;
 import com.mstore.service.UserService;
 import com.mstore.util.ApplicationUtils;

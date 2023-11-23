@@ -7,7 +7,7 @@ import com.mstore.model.Category;
 
 
 @Repository
-public interface CategoryRepo extends JpaRepository<Category, Integer> {
+public interface CategoryRepo extends JpaRepository<Category, Long> {
 
 	public Category findByName(String name);
 }

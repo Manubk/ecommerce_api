@@ -5,21 +5,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mstore.dto.CartDto;
 import com.mstore.dto.CartItemDto;
 import com.mstore.exception.ProductException;
 import com.mstore.model.Cart;
 import com.mstore.response.GeneralResponse;
 import com.mstore.service.CartService;
-import com.mstore.service.UserService;
 
 @RestController
 @RequestMapping("/api")
@@ -39,12 +37,12 @@ public class CartController {
 	}
 	
 	@GetMapping("cart/user")
-	public ResponseEntity<Cart> findUserCart(){
+	public ResponseEntity<CartDto> findUserCart(){
 		log.info("Finding User Cart ");
 		
-		Cart userCart = cartService.findUserCart();
+		 CartDto cartDto = cartService.findUserDtoCart();
 		
-		return new ResponseEntity<Cart>(userCart,HttpStatus.OK);
+		return new ResponseEntity<CartDto>(cartDto,HttpStatus.OK);
 	}
 	
 	
@@ -66,4 +64,21 @@ public class CartController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
 	
+	@PutMapping("/cart/{itemId}/saveforlater")
+	public ResponseEntity<GeneralResponse> saveForLater(@PathVariable Long itemId){
+		log.info("SaveForLater Item="+itemId);
+		
+		GeneralResponse generalResponse = cartService.saveForLater(itemId);
+		
+		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
+	}
+	
+	@PutMapping("/cart/{itemId}/{quantity}")
+	public ResponseEntity<GeneralResponse> increaseQuantity(@PathVariable Long itemId,@PathVariable Integer quantity){
+		log.info("Increasing Quantity for item="+itemId);
+		
+		GeneralResponse generalResponse = cartService.increaseQuantity(itemId, quantity);
+		
+		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
+	}
 }

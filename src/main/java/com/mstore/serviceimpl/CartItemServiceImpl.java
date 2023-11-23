@@ -5,20 +5,17 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.mstore.dto.CartItemDto;
 import com.mstore.exception.CartItemNotFoundException;
-import com.mstore.exception.ProductException;
 import com.mstore.model.Cart;
 import com.mstore.model.CartItem;
 import com.mstore.model.Product;
-import com.mstore.model.User;
 import com.mstore.repo.CartItemRepo;
-import com.mstore.repo.CartRepo;
 import com.mstore.response.GeneralResponse;
 import com.mstore.service.CartItemService;
-import com.mstore.service.CartService;
 
+@Service
 public class CartItemServiceImpl implements CartItemService{
 
 	@Autowired
@@ -68,7 +65,7 @@ public class CartItemServiceImpl implements CartItemService{
 	public GeneralResponse removeCartItemById(Long cartItemId) {
 		log.info("Removing CartItem id="+cartItemId);
 		
-		cartItemRepo.deleteById(cartItemId);
+		cartItemRepo.deleteItemFromCart(cartItemId);
 		
 		return new GeneralResponse.GeneralResposeBuilder().setIsSuccess(true).setMessage("Deleted SuccessFul ;)").build();
 	}

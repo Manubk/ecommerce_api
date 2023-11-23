@@ -1,5 +1,6 @@
 package com.mstore.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -101,9 +102,7 @@ public class ProductServiceImpl implements ProductService{
 			ProductDto productDto = new ProductDto();
 			BeanUtils.copyProperties(productOption.get(), productDto);
 			productDto.setCategory(productOption.get().getCategory().getName());
-			
-			log.info("Product ="+productOption.get().toString());
-			log.info("productDto ="+productDto.toString());
+		
 			return productDto;
 		}
 	
@@ -128,8 +127,17 @@ public class ProductServiceImpl implements ProductService{
 		log.info("Finding the product By seller");
 		User logedInUser = ApplicationUtils.getLogedInUser();
 		
-		//TODO
-		return null;
+		List<Product> products = productRepo.findProductByCreatedBy(logedInUser);
+		List<ProductDto> productDtos = new ArrayList<ProductDto>();
+
+		products.forEach( product -> {
+			ProductDto productDto = new ProductDto();
+			BeanUtils.copyProperties(product, productDto);
+
+			productDtos.add(productDto);
+		});
+		
+		return productDtos;
 	}
 
 }

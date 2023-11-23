@@ -1,6 +1,5 @@
 package com.mstore.service;
 
-import com.mstore.dto.CartItemDto;
 import com.mstore.model.Cart;
 import com.mstore.model.CartItem;
 import com.mstore.model.Product;

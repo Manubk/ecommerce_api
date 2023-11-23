@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.1</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>3.1.5</version>
+		<relativePath />
+		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mstore</groupId>
 	<artifactId>mstore</artifactId>
@@ -18,10 +18,20 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
+		<!--~~(org.springframework.boot:spring-boot-starter-actuator failed. Unable to download metadata. Tried repositories:
+https://repo.maven.apache.org/maven2: java.net.SocketTimeoutException: Connect timed out)~~>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!--~~(org.springframework.boot:spring-boot-starter-web:3.1.5 failed. Unable to download POM. Tried repositories:
+https://repo.maven.apache.org/maven2: java.net.SocketTimeoutException: Connect timed out)~~>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -72,6 +82,23 @@
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.5.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit-bom</artifactId>
+			<version>5.10.1</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

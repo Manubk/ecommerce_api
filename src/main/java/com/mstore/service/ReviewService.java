@@ -6,9 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.mstore.dto.ReviewDto;
 import com.mstore.exception.ProductException;
+import com.mstore.exception.ReviewNotFoundException;
 import com.mstore.exception.UserNotFoundException;
-//import com.mstore.model.Review;
-import com.mstore.model.User;
 import com.mstore.response.GeneralResponse;
 
 @Service
@@ -20,5 +19,7 @@ public interface ReviewService {
 	
 	public List<ReviewDto> getAllReviewByProduct(Long productId);
 	
-	public List<ReviewDto> getAllReviewByUser(Long userId);
+	public List<ReviewDto> getAllReviewByUser();
+	
+	public GeneralResponse deleteReview(Long reviewId) throws ReviewNotFoundException;
 }

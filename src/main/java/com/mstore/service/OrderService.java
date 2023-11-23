@@ -2,30 +2,23 @@ package com.mstore.service;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
-
-import com.mstore.dto.UserDto;
+import com.mstore.dto.OrderDto;
 import com.mstore.exception.OrderException;
-//import com.mstore.model.Order;
+import com.mstore.model.Order;
+import com.mstore.response.GeneralResponse;
 
 public interface OrderService {
 
-//	public Order createOrder(UserDto user, Address shippingAddress);
-//	
-//	public Order findOrderById(Long orderId) throws OrderException;
-//	
-//	public List<Order> userOrderHistory(Long userId);
-//	
-//	public Order placeOrder(Long orderId) throws OrderException;
-//	
-//	public Order shippedOrder(Long orderId) throws OrderException;
+	public GeneralResponse createOrder(OrderDto orderDto);
 	
-//	public Order deliveredOrder(Long orderId) throws OrderException;
-//	
-//	public Order cancledOrder(Long orderId) throws OrderException;
-//	
-//	public List<Order> getAllOrders();
-//	
-//	public Void deleteOrderById(Long orderId) throws OrderException;
+	public Order findOrderById(Long orderId) throws OrderException;
+
+	public List<OrderDto> getUserOrderDtoOfUser();
+	
+	public GeneralResponse changeOrderStatus(String status,Long orderId); //DELEVER , SHIPPED , PENDING
+	
+	public List<Order> getAllOrdersOfUser(Long userId); //ADMIN , SELLER
+	 
+	public Void deleteOrderById(Long orderId) throws OrderException;  //ADMIN
 	
 }

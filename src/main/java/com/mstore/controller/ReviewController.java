@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mstore.dto.ReviewDto;
@@ -40,11 +40,11 @@ public class ReviewController {
 		return new ResponseEntity<List<ReviewDto>>(allReviews, HttpStatus.OK);
 	}
 
-	@GetMapping("/{userId}")
-	public ResponseEntity<List<ReviewDto>> findAllReviewByUser(@PathVariable Long userId) {
-		log.info("Finding All Reviews By User id=" + userId);
+	@GetMapping("")
+	public ResponseEntity<List<ReviewDto>> findAllReviewByUser() {
+		log.info("Finding All Reviews By User ");
 
-		List<ReviewDto> allReviews = reviewService.getAllReviewByUser(userId);
+		List<ReviewDto> allReviews = reviewService.getAllReviewByUser();
 
 		return new ResponseEntity<List<ReviewDto>>(allReviews, HttpStatus.OK);
 	}
@@ -64,7 +64,19 @@ public class ReviewController {
 			throws UserNotFoundException, ProductException {
 		log.info("Saving Review to Product id=" + reviewDto.getProductId());
 
-		return null;
-//		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
+		GeneralResponse generalResponse = reviewService.updateReview(reviewDto);
+		
+		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
+	
+	@DeleteMapping("/{reviewId}")
+	public ResponseEntity<GeneralResponse> deleteReview(@PathVariable Long reviewId){
+		log.info("Deleting the Review by id="+reviewId);
+		
+		GeneralResponse generalResponse = reviewService.deleteReview(reviewId);
+		
+		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
+		
+	}
+	
 }

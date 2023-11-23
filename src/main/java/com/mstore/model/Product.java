@@ -1,21 +1,16 @@
 package com.mstore.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mstore.dto.ProductDto;
 import com.mstore.util.ApplicationUtils;
 
-import io.jsonwebtoken.lang.Assert;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
@@ -26,7 +21,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -60,21 +54,18 @@ public class Product {
 	private String colour;
 	
 	@Embedded
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	@Column(name = "SIZES")
 	private Set<Size> sizes;
 	
 	@Column(name = "IMAGE_URL")
-	private String imageUrl;
-	
-	@OneToMany(mappedBy = "product" ,cascade = CascadeType.ALL)
-	private List<Rating> rating;	
-	
-	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
-	private List<Review> review;
+	private String imageUrl;	
 	
 	@Column(name = "NUMBER_OF_RATING")
 	private Integer numOfRatings=0;
+	
+	@Column(name = "RATINGS")
+	private float ratings = 0f;
 	
 	@ManyToOne
 	@JoinColumn(name = "CATEGORY_ID")
@@ -88,7 +79,7 @@ public class Product {
 	@Column(name = "UPDATED_AT")
 	private LocalDateTime updatedAt;
 	
-	
+	@JsonIgnore
 	@CreatedBy
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CREATED_BY")

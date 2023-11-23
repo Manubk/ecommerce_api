@@ -1,9 +1,7 @@
 package com.mstore.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -32,7 +30,8 @@ public class Cart {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "USER_ID",nullable = false)
 	private User user;
-	
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "cart",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<CartItem> cartItems = new ArrayList<CartItem>();
 	

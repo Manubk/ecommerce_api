@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,8 +73,8 @@ public class ProductController {
 	public ResponseEntity<List<ProductDto>> findProductsBySeller(){
 		log.info("Finding the Products By seller");
 		
-		return null;
-		
+		List<ProductDto> productDtos = productService.findProductsBySeller();
+		return new ResponseEntity<>(productDtos,HttpStatus.OK);
 	}
 	
 	@GetMapping()
@@ -84,7 +83,7 @@ public class ProductController {
 			,@PathVariable(name = "rating")Float rating,@PathVariable(name = "mazDiscount")int maxDiscount,@PathVariable(name = "sort")boolean sort,@PathVariable(name = "pageNum")int pageNum
 			,@PathVariable(name = "pageSize")int pageSize,@PathVariable(name = "stock")boolean stock){
 		
-		productService.getAllProducts(category, colour, size, minPrice, maxPrice, maxDiscount, sort, stock, pageNum, pageSize);
+//		productService.getAllProducts(category, colour, size, minPrice, maxPrice, maxDiscount, sort, stock, pageNum, pageSize);
 		
 		return null;
 	}
