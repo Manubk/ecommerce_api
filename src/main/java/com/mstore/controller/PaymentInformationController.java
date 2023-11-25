@@ -28,7 +28,7 @@ public class PaymentInformationController {
 	@Autowired
 	private PaymentInformationService paymentInformationService;
 	
-	@PostMapping("/paymentinfo")
+	@PostMapping("paymentinfo")
 	public ResponseEntity<GeneralResponse> savePaymentInformation(@RequestBody PaymentInformationDto paymentInformationDto) {
 		log.info("Saving the New Payment Information ");
 		
@@ -37,7 +37,7 @@ public class PaymentInformationController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	} 
 	
-	@PutMapping("/paymentinfo")
+	@PutMapping("paymentinfo")
 	public ResponseEntity<GeneralResponse> updatePaymentInformation(@RequestBody PaymentInformationDto paymentInformationDto){
 		log.info("Updating new payment information id="+paymentInformationDto.getId());
 		
@@ -46,7 +46,7 @@ public class PaymentInformationController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
 
-	@GetMapping("/paymentinfos")
+	@GetMapping("paymentinfos")
 	public ResponseEntity<List<PaymentInformationDto>> getAllPaymentInfoOfUser(){
 		log.info("Get All PaymentInfo of User");
 		
@@ -55,7 +55,7 @@ public class PaymentInformationController {
 		return new ResponseEntity<List<PaymentInformationDto>>(paymentInformations,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/paymentinfo/{paymentId}")
+	@DeleteMapping("paymentinfo/{paymentId}")
 	public ResponseEntity<GeneralResponse> deletePaymentOfUser(@PathVariable Long paymentId){
 		log.info("Deleting the payment of user");
 		

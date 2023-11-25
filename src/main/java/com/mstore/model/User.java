@@ -19,11 +19,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Component
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User{
 	
 	@Id
@@ -60,13 +64,13 @@ public class User{
     @OneToMany(fetch = FetchType.LAZY,mappedBy ="createdBy")
     private List<Product> products;
 	
-    @JsonIgnore
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Rating> rating;
+    // @JsonIgnore
+    // @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	// private List<Rating> rating;
 	
-    @JsonIgnore
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Review> review;
+    // @JsonIgnore
+    // @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	// private List<Review> review;
     
     //Esentials Fields
     @Column(name = "ACTIVATED" , columnDefinition = "boolean default true")

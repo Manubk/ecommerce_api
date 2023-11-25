@@ -61,7 +61,7 @@ public class UserController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
 	
-	@PutMapping("/user")
+	@PutMapping("user")
 	public ResponseEntity<GeneralResponse> updateUser(@RequestBody UserDto userDto){
 		log.info("Updating user email="+userDto.getEmail());
 		
@@ -69,7 +69,7 @@ public class UserController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/user/{userId}")
+	@DeleteMapping("user/{userId}")
     public ResponseEntity<GeneralResponse> deleteUserById(@PathVariable Long userId){
     	log.info("Deleting user by id="+userId);
 		GeneralResponse generalResponse = userService.deleteUserById(userId);
@@ -77,7 +77,7 @@ public class UserController {
     	
     }
 	
-	@PutMapping("/deactivate")
+	@PutMapping("deactivate")
 	public ResponseEntity<GeneralResponse> deactivateAccount(){
 		log.info("Deactivating the account");
 		

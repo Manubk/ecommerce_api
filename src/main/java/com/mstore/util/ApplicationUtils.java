@@ -20,14 +20,14 @@ public class ApplicationUtils {
 	 * This with return true or false if the given string is null or empty 
 	 */
 	public static boolean isNotNullOrEmpty(String value) {
-		return !(value== null) || value.equals("") ;
+		return ((value == null) || value.equals("") || value.isBlank() || value.isEmpty()) ;
 	}
 	
 	/*
 	 * 
 	 */
 	public static Double getDiscountedPrice(Double price , int discountPercent) {
-		return price - price*(discountPercent/100);
+		return price - (price*discountPercent)/100;
 	}
 	
 	public static int getDiscountPercent(Double price , Double discountPrice) {

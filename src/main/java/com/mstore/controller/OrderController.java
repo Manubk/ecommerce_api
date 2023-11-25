@@ -37,7 +37,7 @@ public class OrderController {
 	@Autowired
 	private OrderItemRepo itemRepo;
 	
-	@PostMapping("/order/create")
+	@PostMapping("order/create")
 	public ResponseEntity<GeneralResponse> createOrder(@RequestBody OrderDto orderDto){
 		log.info("creating New Order");
 		
@@ -47,7 +47,7 @@ public class OrderController {
 	}
 	
 	//ADMIN , SELLER
-	@PutMapping("/order/status")
+	@PutMapping("order/status")
 	public ResponseEntity<GeneralResponse> changeOrderStatus(@Param(value = "status")String status,@Param(value = "orderId")Long orderId){
 		log.info("changing order Status");
 		
@@ -56,7 +56,7 @@ public class OrderController {
 		return new ResponseEntity<GeneralResponse>(generalResponse,HttpStatus.OK);
 	}
 	
-	@GetMapping("/order/history")
+	@GetMapping("order/history")
 	public ResponseEntity<List<OrderDto>> getOrderDtoOfUser(){
 		log.info("Getting order history of User");
 		
@@ -65,7 +65,7 @@ public class OrderController {
 		return new ResponseEntity<List<OrderDto>>(userOrderDtos,HttpStatus.OK);
 	}
 	
-	@GetMapping("/order/{orderId}")
+	@GetMapping("order/{orderId}")
 	public ResponseEntity<Order> getOrderById(@PathVariable Long orderId) throws OrderException{
 		log.info("Getting Order By Id="+orderId);
 		
@@ -74,7 +74,7 @@ public class OrderController {
 		return new ResponseEntity<Order>(order,HttpStatus.OK);
 	}
 	
-	@GetMapping("/order/user/{userId}")
+	@GetMapping("order/user/{userId}")
 	public ResponseEntity<List<Order>> getOrderByUserId(@PathVariable Long userId) throws OrderNotFoundException, OrderException{
 		log.info("Getting The order by userId="+userId);
 		
@@ -83,7 +83,7 @@ public class OrderController {
 		return new ResponseEntity<List<Order>>(orders,HttpStatus.OK);
 	}
 
-	@PostMapping("/save")
+	@PostMapping("save")
 	public ResponseEntity<String> save() throws OrderNotFoundException, OrderException{
 		log.info("Getting The order by userId=");
 		OrderItem item = new OrderItem();
