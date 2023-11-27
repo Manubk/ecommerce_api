@@ -1,12 +1,20 @@
 package com.mstore;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.BeanUtils;
 
+import com.mstore.dto.UserDto;
 import com.mstore.model.Address;
 import com.mstore.model.User;
 import com.mstore.util.ApplicationUtils;
@@ -20,7 +28,7 @@ public class UserServiceImplTest {
     List<User> users ;
 
     @BeforeAll
-    public void setUp(){
+    public void InnetialSetUp(){
         for(int i=0;i<length;i++){
             User user = new User();
             user.setId(Long.valueOf(i));
@@ -52,6 +60,10 @@ public class UserServiceImplTest {
         }
     }
 
+    @BeforeEach
+    public void setUp(){
+        MockitoAnnotations.initMocks(this);
+    }
 
     // @Test
     // public void findLogedInUserTest(){
@@ -64,8 +76,9 @@ public class UserServiceImplTest {
     //     User userMock = ApplicationUtils.getLogedInUser();
     //     UserDto userDtoMock = new UserDto();
     //     BeanUtils.copyProperties(userMock, userDtoMock);
-        
-    //     assertEquals(userDto, userDtoMock);
 
+    //     assertEquals(userDto, userDtoMock);
+    //     assertEquals(userDto.getFirstName(), userDtoMock.getFirstName());
+    //     assertEquals(userMock, userDtoMock);
     // }
 }

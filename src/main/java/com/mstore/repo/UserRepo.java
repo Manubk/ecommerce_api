@@ -15,4 +15,5 @@ public interface UserRepo extends JpaRepository<User, Long> {
 	
 //	@Query(value = "UPDATE User u set u.activated= CASE WHEN u.activated=true THEN false ELSE true END WHERE id =:userId")
 //	public User deactivateAccount(@Param("userId")Long userId);
+
 }
