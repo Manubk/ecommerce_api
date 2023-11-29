@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +61,7 @@ class AddressRepoTest{
 
     @AfterEach
     public void afterAll(){
+        //Deleting all the address from database
         addressRepo.deleteAll(expectedUser_1.getAddress());
         userRepo.delete(expectedUser_1);
     }

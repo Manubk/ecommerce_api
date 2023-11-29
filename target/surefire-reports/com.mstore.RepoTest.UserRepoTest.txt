@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mstore.RepoTest.UserRepoTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.211 s - in com.mstore.RepoTest.UserRepoTest

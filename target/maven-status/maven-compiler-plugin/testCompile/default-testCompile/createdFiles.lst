@@ -1,0 +1,7 @@
+com\mstore\RepoTest\UserRepoTest.class
+com\mstore\UserServiceImplTest.class
+com\mstore\MStoreApplicationTests.class
+com\mstore\AuthControllerTest.class
+com\mstore\RepoTest\AddressRepoTest.class
+com\mstore\RepoTest\PaymentInformationRepoTest.class
+ApplicationUtilisTest.class

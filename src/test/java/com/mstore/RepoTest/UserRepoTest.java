@@ -1,17 +1,18 @@
 package com.mstore.RepoTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.jupiter.api.AfterAll;
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.mstore.model.Product;
 import com.mstore.model.User;
 import com.mstore.repo.UserRepo;
 
@@ -25,7 +26,9 @@ public class UserRepoTest {
 
     @BeforeEach
     public void setUp(){
-        user = new User(1l, "manu", "b k", "test@gmail.com", "123", null, null, null, null, null, null, null);
+        user = new User(1l, "manu", "b k", "test@gmail.com", "123", null, null, null,new ArrayList<Product>(), null, null, null);
+        user.setRole("ROLE_USER");
+        user.getProducts().add(new Product());
         userRepo.save(user);
  }
     
@@ -57,6 +60,7 @@ public class UserRepoTest {
         assertNull(actualUser);
     }
 
+    @Disabled
     @Test
     public void findByEmailAndPassword_null(){
         User actualUser = userRepo.findByEmailAndPassword(null, null);

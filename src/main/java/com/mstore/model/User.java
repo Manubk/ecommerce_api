@@ -62,7 +62,7 @@ public class User{
     
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,mappedBy ="createdBy")
-    private List<Product> products;
+    private List<Product> products = new ArrayList<Product>();
 	
     // @JsonIgnore
     // @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
